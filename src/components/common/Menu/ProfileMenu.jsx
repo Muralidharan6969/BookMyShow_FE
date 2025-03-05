@@ -2,110 +2,84 @@ import {
   Avatar,
   Box,
   Divider,
-  IconButton,
   ListItemIcon,
   Menu,
   MenuItem,
-  Tooltip,
   Typography,
 } from "@mui/material";
-import { PersonAdd, Settings, Logout } from "@mui/icons-material";
+import { Logout } from "@mui/icons-material";
 import { useState } from "react";
+import HistoryIcon from "@mui/icons-material/History";
 
-export const ProfileMenu = () => {
+const ProfileMenu = ({
+  handleLogout,
+  handleProfileClick,
+  userName,
+  userAvatar,
+  handleOrderClick,
+}) => {
   const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
 
-  const handleClick = (event) => {
+  const handleMouseEnter = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const handleMouseLeave = () => {
     setAnchorEl(null);
   };
 
   return (
-    <>
-      <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
-        <Typography sx={{ minWidth: 100 }}>Contact</Typography>
-        <Typography sx={{ minWidth: 100 }}>Profile</Typography>
-        <Tooltip title="Account settings">
-          <IconButton
-            onClick={handleClick}
-            size="small"
-            sx={{ ml: 2 }}
-            aria-controls={open ? "account-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-          >
-            <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
-          </IconButton>
-        </Tooltip>
-      </Box>
+    <Box
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        gap: 1,
+        padding: "5px 10px",
+        borderRadius: "8px",
+        "&:hover": { cursor: "pointer" },
+      }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <Avatar src={userAvatar} sx={{ width: 32, height: 32 }} />
+      <Typography variant="body1">Hi, {userName || "User"}</Typography>
+
       <Menu
         anchorEl={anchorEl}
-        id="account-menu"
-        open={open}
-        onClose={handleClose}
-        onClick={handleClose}
+        open={Boolean(anchorEl)}
+        onClose={handleMouseLeave}
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
-        slotProps={{
-          paper: {
-            elevation: 0,
-            sx: {
-              overflow: "visible",
-              filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
-              mt: 1.5,
-              "& .MuiAvatar-root": {
-                width: 32,
-                height: 32,
-                ml: -0.5,
-                mr: 1,
-              },
-              "&::before": {
-                content: '""',
-                display: "block",
-                position: "absolute",
-                top: 0,
-                right: 14,
-                width: 10,
-                height: 10,
-                bgcolor: "background.paper",
-                transform: "translateY(-50%) rotate(45deg)",
-                zIndex: 0,
-              },
-            },
+        sx={{
+          mt: 1,
+          "& .MuiPaper-root": {
+            borderRadius: "10px",
+            minWidth: "160px",
+            boxShadow: "0px 4px 10px rgba(0,0,0,0.15)",
+            transition: "ease-in-out",
           },
         }}
       >
-        <MenuItem onClick={handleClose}>
-          <Avatar /> Profile
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Avatar /> My account
+        <MenuItem onClick={handleProfileClick}>
+          <Avatar src={userAvatar} sx={{ width: 32, height: 32, mr: 1 }} />
+          Profile
         </MenuItem>
         <Divider />
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleOrderClick}>
           <ListItemIcon>
-            <PersonAdd fontSize="small" />
+            <HistoryIcon fontSize="small" />
           </ListItemIcon>
-          Add another account
+          Booking History
         </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <Settings fontSize="small" />
-          </ListItemIcon>
-          Settings
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <Divider />
+        <MenuItem onClick={handleLogout}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
           Logout
         </MenuItem>
       </Menu>
-    </>
+    </Box>
   );
 };
 

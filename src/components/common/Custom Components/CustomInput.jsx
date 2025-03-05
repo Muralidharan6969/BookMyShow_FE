@@ -15,6 +15,7 @@ const CustomInput = ({
   value,
   rules = {},
   onChange,
+  width,
 }) => {
   const theme = useTheme();
 
@@ -59,6 +60,7 @@ const CustomInput = ({
                 cursor: disabled ? "not-allowed" : "inherit",
               },
               height: "3rem",
+              width: width,
             },
             "& .MuiOutlinedInput-notchedOutline": {
               border: disabled ? "1px solid  #D5D6D690" : "1px solid #D5D6D6",
