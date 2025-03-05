@@ -16,6 +16,7 @@ const CustomModal = ({
   height,
   width,
   title,
+  seatSelection = false,
   children,
 }) => {
   const theme = useTheme();
@@ -41,26 +42,30 @@ const CustomModal = ({
                 md: "60%", // 60% on medium screens
                 lg: "50%",
               },
-          borderRadius: "20px",
+          borderRadius: !seatSelection ? "20px" : "10px",
         },
       }}
     >
-      <Box
-        sx={{ backgroundColor: theme.palette.primary.main, height: "20px" }}
-      ></Box>
+      {!seatSelection && (
+        <Box
+          sx={{ backgroundColor: theme.palette.primary.main, height: "20px" }}
+        ></Box>
+      )}
       <DialogTitle
         sx={{
           m: 0,
           p: 2,
-          fontSize: theme.typography.h3.fontSize,
-          fontWeight: 700,
+          fontSize: !seatSelection
+            ? theme.typography.h3.fontSize
+            : theme.typography.body1.fontSize,
+          fontWeight: !seatSelection ? "700" : theme.typography.h3.fontWeight,
           color: theme.palette.text.main,
-          textAlign: "left",
+          textAlign: !seatSelection ? "left" : "center",
         }}
       >
         {title}
       </DialogTitle>
-      {onClose && (
+      {!seatSelection && onClose && (
         <IconButton
           aria-label="close"
           onClick={onClose}

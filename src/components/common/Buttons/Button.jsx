@@ -11,6 +11,7 @@ const Button = (props) => {
     textTransform: "none", // Ensure no text transformation
     boxShadow: theme.shadows[2], // Light shadow from theme
     minWidth: "120px", // Minimum width for consistency
+    maxHeight: "50px",
     paddingInline: props.paddingAdjust || theme.spacing(2), // Default padding from theme or custom padding
     ...props.style, // Any additional styles passed through props
   };
@@ -42,7 +43,8 @@ const Button = (props) => {
       backgroundColor: theme.palette.background.paper, // Paper background
       "&:hover": {
         backgroundColor: theme.palette.secondary.light, // Light shade on hover
-        borderColor: theme.palette.secondary.dark, // Darker border on hover
+        borderColor: theme.palette.secondary.dark,
+        color: "black",
       },
     },
     text: {
@@ -66,12 +68,24 @@ const Button = (props) => {
         borderColor: "#FFD6EC", // Lighter border color on hover
       },
     },
+    tertiaryv3: {
+      variant: "outlined",
+      color: theme.palette.primary.main, // Custom color for tertiaryv2 button
+      backgroundColor: "white", // Custom background
+      border: `1px solid grey`, // Custom border
+      "&:hover": {
+        // backgroundColor: "#F5E1F5", // Light pink on hover
+        // borderColor: "#FFD6EC", // Lighter border color on hover
+      },
+      boxShadow: "none",
+    },
   };
 
   const buttonVariant = variantStyles[props.variant] || variantStyles.primary; // Default to "primary"
 
   return (
     <StyledButton
+      type={props.type || "button"}
       variant={buttonVariant.variant}
       color={buttonVariant.color}
       disabled={props.disabled}
