@@ -42,7 +42,6 @@ const AdminRegister = () => {
       }
     },
     onSuccess: (data) => {
-      console.log("Executing 1.....");
       alertNotification({ message: data.message, severity: "success" });
       reset();
       navigate("/admin/login");
@@ -59,7 +58,6 @@ const AdminRegister = () => {
   });
 
   const onSubmit = useCallback(async (data) => {
-    console.log("Submitted form data", data);
     mutate(data);
   }, []);
 

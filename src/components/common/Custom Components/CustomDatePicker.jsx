@@ -53,7 +53,6 @@ const CustomDatePicker = ({
                     : dateOnly
                     ? moment(dateObject).format("YYYY-MM-DD")
                     : moment(dateObject).startOf("day").toISOString();
-                console.log("formattedDate", formattedDate);
                 // onChange(formattedDate);
               }}
               // format={dateOnly ? "YYYY-MM-DD" : "DD-MM-YYYY"} // Adjust displayed format

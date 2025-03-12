@@ -23,7 +23,6 @@ const SeatLayoutHeader = ({
     const response = await get({
       url: `/shows/${showId}/details`,
     });
-    console.log("response.data", response.data);
     setShowDetails(response.data);
   };
 

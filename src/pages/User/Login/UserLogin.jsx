@@ -45,7 +45,6 @@ const UserLogin = () => {
       }
     },
     onSuccess: (data) => {
-      console.log("data", data);
       alertNotification({ message: data.message, severity: "success" });
       reset();
       const { token, ...userData } = data;
@@ -69,7 +68,6 @@ const UserLogin = () => {
   });
 
   const onSubmit = useCallback(async (data) => {
-    console.log("Submitted form data", data);
     mutate(data);
   }, []);
 

@@ -16,7 +16,6 @@ const ProtectedRoute = ({ children, allowedUserType }) => {
   }
 
   if (!isAuthorized) {
-    console.log("Navigating to login");
     return <Navigate to={`/${allowedUserType}/login`} />;
   }
 

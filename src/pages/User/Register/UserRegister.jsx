@@ -58,7 +58,6 @@ const UserRegister = () => {
   });
 
   const onSubmit = useCallback(async (data) => {
-    console.log("Submitted form data", data);
     mutate(data);
   }, []);
 

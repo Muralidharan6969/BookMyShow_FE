@@ -16,7 +16,6 @@ const FormInput = ({
   disabled = false,
 }) => {
   const theme = useTheme();
-  console.log("label", label);
 
   return (
     <Controller

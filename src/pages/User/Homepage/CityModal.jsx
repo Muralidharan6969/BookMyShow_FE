@@ -10,11 +10,9 @@ import { get } from "../../../app/api/apiConfig";
 const CityModal = ({ open, citySelection }) => {
   const [listOfCities, setListOfCities] = useState([]);
   const cityDetails = useSelector((state) => state.userReducer.city);
-  console.log("cityDetails", cityDetails);
 
   const fetchAllCities = async () => {
     const response = await get({ url: "/cities" });
-    console.log("Response in fetchAllCities of CityModal", response);
     setListOfCities(response.data);
   };
 

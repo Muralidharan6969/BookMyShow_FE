@@ -28,7 +28,6 @@ const ShowSeatLayout = () => {
   const [isFirstLoad, setIsFirstLoad] = useState(true);
 
   const handlePayNow = async () => {
-    console.log("handlePayNow called");
     setIsLoading(true);
     setErrorMessage("");
 
@@ -46,13 +45,10 @@ const ShowSeatLayout = () => {
         },
       });
 
-      console.log("API Response:", response);
-
       if (
         response?.message === "Seats have been blocked successfully!" &&
         response?.data
       ) {
-        console.log("Navigating to Payment Screen");
         setBookingData(response.data);
         setIsBlockSuccessful(true);
         setIsLoading(false);
@@ -77,7 +73,6 @@ const ShowSeatLayout = () => {
     const response = await get({
       url: `/theatres/shows/${showId}/seat-layout`,
     });
-    console.log("response.data", response.data);
     setShowSeatLayouts(response.data);
   };
 
@@ -111,10 +106,6 @@ const ShowSeatLayout = () => {
       let newRemainingSeats =
         selectedSeatCount - prevSelectedSeats.length || selectedSeatCount;
 
-      console.log("selectedSeatCount at start of function", selectedSeatCount);
-      console.log("prevSelectedSeats at start of function", prevSelectedSeats);
-      console.log("newRemainingSeats at start of function", newRemainingSeats);
-
       const rowSeats = showSeatLayouts
         .filter((seat) => seat.seatRow === seatObj.seatRow)
         .sort((a, b) => a.seatCol - b.seatCol);
@@ -134,8 +125,6 @@ const ShowSeatLayout = () => {
         updatedSeats.push(seat);
       }
 
-      console.log("updatedSeats after bulk seat selection", updatedSeats);
-
       if (updatedSeats.length === selectedSeatCount) {
         prevSelectedSeats = prevSelectedSeats.filter(
           (seat) =>
@@ -148,9 +137,6 @@ const ShowSeatLayout = () => {
           updatedSeats = [...updatedSeats, ...prevSelectedSeats];
         }
       }
-
-      console.log("prevSelectedSeats after filtering", prevSelectedSeats);
-      console.log("updatedSeats after filtering", updatedSeats);
 
       setShowSeatLayouts((prevLayouts) =>
         prevLayouts.map((seat) => {
@@ -191,8 +177,6 @@ const ShowSeatLayout = () => {
     setOpen(false);
   };
 
-  console.log("selectedSeats", selectedSeats);
-
   useEffect(() => {
     setSelectedSeats([]);
     setShowSeatLayouts((prevLayout) =>
@@ -203,8 +187,6 @@ const ShowSeatLayout = () => {
         return seat;
       })
     );
-
-    console.log("selectedSeatCount changed, resetting selectedSeats...");
   }, [selectedSeatCount]);
 
   return (

@@ -46,7 +46,6 @@ const DateSlick = ({ showOnlyFutureDates, movieDates, dateSelection }) => {
 
   // Custom Next Arrow
   const NextArrow = ({ onClick }) => {
-    console.log("Next Arrow Rendered");
     return (
       <IconButton
         onClick={onClick}
@@ -78,7 +77,6 @@ const DateSlick = ({ showOnlyFutureDates, movieDates, dateSelection }) => {
 
   // Custom Prev Arrow
   const PrevArrow = ({ onClick }) => {
-    console.log("Prev Arrow Rendered");
     return (
       <IconButton
         onClick={onClick}

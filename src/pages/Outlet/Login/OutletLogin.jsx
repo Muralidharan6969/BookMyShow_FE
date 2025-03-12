@@ -19,7 +19,6 @@ const OutletLogin = () => {
   const theme = useTheme();
 
   const onSubmit = useCallback(async (data) => {
-    console.log("Submitted form data", data);
   }, []);
 
   return (

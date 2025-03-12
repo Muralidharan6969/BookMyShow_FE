@@ -86,8 +86,6 @@ const UserHomePage = () => {
           selectedLanguages.includes(movie.language)
         );
 
-  console.log("selectedLanguages", selectedLanguages);
-
   return (
     <Box
       display="flex"

@@ -46,7 +46,6 @@ const SliderBanner = ({ moviesArray }) => {
   const sliderRef = useRef(null);
   const isSingleSlide = moviesArray.length === 1;
 
-  console.log("isSingleSlide", isSingleSlide);
 
   const settings = {
     dots: false,

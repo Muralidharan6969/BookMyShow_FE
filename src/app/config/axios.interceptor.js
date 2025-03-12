@@ -18,11 +18,9 @@ instance.interceptors.request.use(function (config) {
 
 instance.interceptors.response.use(
   (response) => {
-    console.log("response captured in axios response interceptor", response);
     return response;
   },
   (error) => {
-    console.log("error in axios response interceptor", error);
     const normalizedError = {
       message:
         error.response?.data?.message || error.message || "An error occurred",

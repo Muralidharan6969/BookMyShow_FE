@@ -12,7 +12,6 @@ export const get = async ({
         "Content-Type": customHeaders,
       },
     });
-    console.log("Response in get of apiConfig.js", response);
     return response.data;
   } catch (error) {
     return error;

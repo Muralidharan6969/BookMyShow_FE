@@ -9,8 +9,6 @@ const ShowCard = ({ showObj, index, movieName, movieId }) => {
   const navigate = useNavigate();
   const cityDetails = useSelector((state) => state.userReducer.city);
 
-  console.log("showObj", showObj);
-
   const getStyles = (status) => {
     switch (status) {
       case "Available":

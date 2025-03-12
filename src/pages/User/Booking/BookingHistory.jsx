@@ -232,7 +232,7 @@ const BookingList = () => {
           <Button
             variant="contained"
             color="primary"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/user/home")}
             sx={{ mt: 3 }}
           >
             Go to Home
