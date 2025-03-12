@@ -1,17 +1,15 @@
 import { useTheme } from "@emotion/react";
 import { Box, Button, Icon, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { movieDates, movieDetails } from "./TheatresAndShowDetails.helper";
 import TheatresAndShowCard from "./TheatresAndShowCard";
-import { theatresAndShowsArrays } from "./TheatresAndShowDetails.helper";
-import DateSlick from "./DateSlick";
+import DateSlick from "../../../components/common/DateSlick";
 import ShowtimeFilter from "./ShowTimeFilter";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { get } from "../../../app/api/apiConfig";
-import MovieDetailSkeleton from "./MovieDetailSkeleton";
-import DatesPickerSkeleton from "./DatesPickerSkeleton";
-import TheatreShowDetailsSkeleton from "./TheatreShowDetailsSkeleton";
+import MovieDetailSkeleton from "../../../components/skeletons/MovieDetailSkeleton";
+import DatesPickerSkeleton from "../../../components/common/DatesPickerSkeleton";
+import TheatreShowDetailsSkeleton from "../../../components/skeletons/TheatreShowDetailsSkeleton";
 import { motion } from "framer-motion";
 import MovieImage from "../../../assets/Film rolls-rafiki.svg";
 

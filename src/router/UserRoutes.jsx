@@ -4,11 +4,11 @@ import UserHomePage from "../pages/User/Homepage/UserHomePage";
 import ProtectedRoute from "./ProtectedRoute";
 import MovieDetails from "../pages/User/MovieDetails/MovieDetails";
 import TheatresAndShowDetails from "../pages/User/TheatresAndShowDetails/TheatresAndShowDetails";
-import ShowSeatLayout from "../pages/User/TheatresAndShowDetails/ShowSeatLayout";
+import ShowSeatLayout from "../pages/User/Seating/ShowSeatLayout";
 import NotFound from "./NotFound";
-import BookingList from "../pages/User/TheatresAndShowDetails/BookingHistory";
+import BookingList from "../pages/User/Booking/BookingHistory";
 import UserProfile from "../pages/User/Layout/UserProfile";
-import BookingConfirmation from "../pages/User/TheatresAndShowDetails/BookingCOnfirmation";
+import BookingConfirmation from "../pages/User/Booking/BookingConfirmation";
 
 const UserRoutes = () => {
   return (

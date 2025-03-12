@@ -13,7 +13,7 @@ import MovieIcon from "@mui/icons-material/Movie";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import EventSeatIcon from "@mui/icons-material/EventSeat";
 import ConfirmationNumberIcon from "@mui/icons-material/ConfirmationNumber";
-import { mockBookings } from "./bookingHistory.helper";
+import { mockBookings } from "../../../utils/bookingHistory.helper";
 import { get } from "../../../app/api/apiConfig";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";

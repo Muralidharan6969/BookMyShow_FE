@@ -1,6 +1,5 @@
 import { Box, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { showSeatlayout } from "./ShowSeatLayout.helper";
 import { useTheme } from "@emotion/react";
 import TvIcon from "@mui/icons-material/Tv";
 import SeatLayoutHeader from "./SeatLayoutHeader";
@@ -8,8 +7,8 @@ import SeatSelectionModal from "./SeatSelectionModal";
 import { useNavigate, useParams } from "react-router-dom";
 import { get, post } from "../../../app/api/apiConfig";
 import { useSelector } from "react-redux";
-import PaymentScreen from "./Payment";
-import TicketLoader from "./TicketLoader";
+import PaymentScreen from "../Payment/Payment";
+import TicketLoader from "../../../components/common/TicketLoader";
 
 const ShowSeatLayout = () => {
   const theme = useTheme();

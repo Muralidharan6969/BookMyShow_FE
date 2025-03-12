@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal, Box, Typography, Button } from "@mui/material";
-import TicketLoaderGif from "../../../assets/Ticket Loader 2.gif";
+import TicketLoaderGif from "../../assets/Ticket Loader 2.gif";
 
 const TicketLoader = ({ open, errorMessage, handleRefresh }) => {
   return (

@@ -1,6 +1,5 @@
 import { Box, IconButton, Typography } from "@mui/material";
 import React from "react";
-import { theatresAndShowsArrays } from "./TheatresAndShowDetails.helper";
 import ShowCard from "./ShowCard";
 import { useTheme } from "@emotion/react";
 import { Fastfood, PhoneIphone } from "@mui/icons-material";

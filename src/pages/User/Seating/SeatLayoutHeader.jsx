@@ -6,7 +6,6 @@ import {
   Edit,
   Close,
 } from "@mui/icons-material";
-import { showDetails } from "./ShowSeatLayout.helper";
 import { useTheme } from "@emotion/react";
 import { get } from "../../../app/api/apiConfig";
 
@@ -70,37 +69,39 @@ const SeatLayoutHeader = ({
           >{`${showDetails?.theatreDetail} | ${showDetails?.showDetail}`}</Typography>
         </Box>
       </Box>
-      {!isBlockSuccessful && <Box
-        display={"flex"}
-        alignItems={"center"}
-        justifyContent={"flex-end"}
-        gap={"2em"}
-      >
+      {!isBlockSuccessful && (
         <Box
           display={"flex"}
-          borderRadius={"4px"}
           alignItems={"center"}
-          justifyContent={"space-around"}
-          gap={"1rem"}
-          border={"1px solid #999"}
-          p={0.5}
-          onClick={() => setOpen(true)}
-          sx={{
-            ":hover": {
-              cursor: "pointer",
-            },
-          }}
+          justifyContent={"flex-end"}
+          gap={"2em"}
         >
-          <Typography
-            fontSize={theme.typography.body2.fontSize}
-            fontWeight={theme.typography.body2.fontWeight}
+          <Box
+            display={"flex"}
+            borderRadius={"4px"}
+            alignItems={"center"}
+            justifyContent={"space-around"}
+            gap={"1rem"}
+            border={"1px solid #999"}
+            p={0.5}
+            onClick={() => setOpen(true)}
+            sx={{
+              ":hover": {
+                cursor: "pointer",
+              },
+            }}
           >
-            {`${selectedSeatCount} Tickets`}
-          </Typography>
-          <Edit fontSize="small" />
+            <Typography
+              fontSize={theme.typography.body2.fontSize}
+              fontWeight={theme.typography.body2.fontWeight}
+            >
+              {`${selectedSeatCount} Tickets`}
+            </Typography>
+            <Edit fontSize="small" />
+          </Box>
+          <Close onClick={handleBackClick} />
         </Box>
-        <Close onClick={handleBackClick} />
-      </Box>}
+      )}
     </Box>
   );
 };
