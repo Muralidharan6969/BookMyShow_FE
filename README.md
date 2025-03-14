@@ -1,7 +1,5 @@
 # ShowGo - Movie Ticket Booking Platform
 
-## SHOWGO
-
 ## 📋 Overview
 
 ShowGo is a comprehensive movie ticket booking platform inspired by BookMyShow, allowing users to browse movies, select theaters, book seats, and make payments. The platform features a robust backend with role-based access control and a streamlined frontend interface for end users.
@@ -91,7 +89,6 @@ The platform supports three distinct user types:
 
 ```bash
 git clone https://github.com/Muralidharan6969/BookMyShow_FE.git
-cd showgo-frontend
 ```
 
 2. Install dependencies:
