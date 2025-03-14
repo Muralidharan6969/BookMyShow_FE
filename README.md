@@ -89,6 +89,7 @@ The platform supports three distinct user types:
 
 ```bash
 git clone https://github.com/Muralidharan6969/BookMyShow_FE.git
+cd BookMyShow_FE
 ```
 
 2. Install dependencies:
