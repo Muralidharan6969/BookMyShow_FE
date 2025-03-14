@@ -107,7 +107,7 @@ VITE_STRIPE_TEST_PUBLIC_KEY=your_stripe_test_key
 4. Start the application:
 
 ```bash
-npm start
+npm run dev
 ```
 
 ## 🔧 Technical Implementation Highlights
